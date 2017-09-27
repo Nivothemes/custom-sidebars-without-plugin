@@ -20,14 +20,7 @@ class CustomSidebars {
 
 	public function nivoshop_custom_widgets_init() {
 		
-		$sidebared_pages = get_pages();
-		$sidebared_products = get_posts('post_type=product&posts_per_page=-1');
-		
-		if ( !empty($sidebared_products) ) {			
-			$sidebared_content = array_merge( $sidebared_pages, $sidebared_products );
-		} else {
-			$sidebared_content = $sidebared_pages;
-		}
+		$sidebared_content = get_pages();
 		
 		foreach ( $sidebared_content as $sp ) {
 			
